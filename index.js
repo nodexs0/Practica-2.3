@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import DB from "./config/db.js";
 import UserRouters from "./routes/UserRoutes.js";
 import PlayerRouters from "./routes/PlayerRoutes.js";
+import PedidoRouters from "./routes/PedidoRoutes.js";
+import ProductoRouters from "./routes/ProcudtoRoutes.js";
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", UserRouters);
 app.use("/api", PlayerRouters);
+app.use("/api", PedidoRouters);
+app.use("/api", ProductoRouters);
 
 DB.connectDB(process.env.DB_URI);
 
