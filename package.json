@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/nodexs0/Practica-2.3#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.4"
-  }
+  },
+  "type": "module"
 }
