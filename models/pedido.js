@@ -8,6 +8,6 @@ const orderSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
-const Order = mongoose.model('Pedidos', orderSchema);
+const Order = mongoose.model('Pedido', orderSchema);
 
 export default Order;
