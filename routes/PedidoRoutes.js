@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/pedido", async (request, response) => {
     try {
-        const orders = await Order.find({}).populate('player').populate('user').populate('products');
+        const orders = await Order.find({}).populate('player').populate('user').populate('producto');
         response.status(200).send(orders);
     } catch (error) {
         response.status(500).send({ error });
@@ -25,7 +25,7 @@ router.post("/pedido", async (request, response) => {
 
 router.get("/pedido/:id", async (request, response) => {
     try {
-        const order = await Order.findOne({ _id: request.params.id }).populate('player').populate('user').populate('products');
+        const order = await Order.findOne({ _id: request.params.id }).populate('player').populate('user').populate('producto');
         response.status(200).send(order);
     } catch (error) {
         response.status(500).send({ error });
