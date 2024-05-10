@@ -1,0 +1,23 @@
+{
+  "name": "practica-2.3",
+  "version": "1.0.0",
+  "description": "- Mariano Ugalde Diaz\r - Ethan Abraham Sánchez Téllez",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodexs0/Practica-2.3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodexs0/Practica-2.3/issues"
+  },
+  "homepage": "https://github.com/nodexs0/Practica-2.3#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  }
+}
