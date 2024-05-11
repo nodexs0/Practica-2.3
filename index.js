@@ -4,7 +4,7 @@ import DB from "./config/db.js";
 import UserRouters from "./routes/UserRoutes.js";
 import PlayerRouters from "./routes/PlayerRoutes.js";
 import PedidoRouters from "./routes/PedidoRoutes.js";
-import ProductoRouters from "./routes/ProcudtoRoutes.js";
+import ProductoRouters from "./routes/ProductoRoutes.js";
 
 dotenv.config();
 
