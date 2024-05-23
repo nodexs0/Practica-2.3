@@ -32,4 +32,16 @@ router.get("/pedido/:id", async (request, response) => {
     }
 });
 
+router.delete("/pedido/:id", async (request, response) => {
+    try {
+        const order = await Order.findByIdAndDelete(request.params.id);
+        if (!order) {
+            return response.status(404).send({ error: "Pedido no encontrado" });
+        }
+        response.status(200).send({ message: "Pedido eliminado", order });
+    } catch (error) {
+        response.status(500).send({ error });
+    }
+});
+
 export default router;

@@ -32,4 +32,16 @@ router.get("/productos/:id", async (request, response) => {
     }
 });
 
+router.delete("/productos/:id", async (request, response) => {
+    try {
+        const product = await Product.findByIdAndDelete(request.params.id);
+        if (!product) {
+            return response.status(404).send({ error: "Producto no encontrado" });
+        }
+        response.status(200).send({ message: "Producto eliminado", product });
+    } catch (error) {
+        response.status(500).send({ error });
+    }
+});
+
 export default router;

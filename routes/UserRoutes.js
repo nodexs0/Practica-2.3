@@ -31,4 +31,16 @@ router.get("/users/:id", async (request, response) => {
     }
 });
 
+router.delete("/users/:id", async (request, response) => {
+    try {
+        const user = await User.findByIdAndDelete(request.params.id);
+        if (!user) {
+            return response.status(404).send({ error: "Usuario no encontrado" });
+        }
+        response.status(200).send({ message: "Usuario eliminado", user });
+    } catch (error) {
+        response.status(500).send({ error });
+    }
+});
+
 export default router;

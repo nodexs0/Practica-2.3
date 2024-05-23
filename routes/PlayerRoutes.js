@@ -31,4 +31,16 @@ router.get("/players/:id", async (request, response) => {
     }
 });
 
+router.delete("/players/:id", async (request, response) => {
+    try {
+        const player = await Player.findByIdAndDelete(request.params.id);
+        if (!player) {
+            return response.status(404).send({ error: "Jugador no encontrado" });
+        }
+        response.status(200).send({ message: "Jugador eliminado", player });
+    } catch (error) {
+        response.status(500).send({ error });
+    }
+});
+
 export default router;
